@@ -103,8 +103,7 @@ const NavBar = () => {
                 <img
                   alt="Tailwind CSS Navbar component"
                   referrerPolicy="no-referrer"
-                  // src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
-                  src={"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                  src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
                 />
               </div>
             </div>
@@ -113,10 +112,8 @@ const NavBar = () => {
               className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               <div className=" pb-3 border-b border-b-gray-200">
-                <li className="text-sm font-bold">name</li>
-                {/* <li className="text-sm font-bold">{user.displayName}</li> */}
-                <li className="text-xs">email</li>
-                {/* <li className="text-xs">{user.email}</li> */}
+                <li className="text-sm font-bold">{user.displayName}</li>
+                <li className="text-xs">{user.email}</li>
               </div>
               <li className="mt-3">
                 <Link to={"/profile"}>
@@ -150,7 +147,7 @@ const NavBar = () => {
               </li>
               <li>
                 <button
-                  // onClick={signOutUser}
+                  onClick={signOutUser}
                   className="btn btn-xs text-left bg-linear-to-r from-pink-500 to-red-500 text-white"
                 >
                   <IoLogOut /> Logout
