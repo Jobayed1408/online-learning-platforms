@@ -4,7 +4,8 @@ import { AuthContext } from "../../context/AuthContext";
 import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle } = useContext(AuthContext)
+  // useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();

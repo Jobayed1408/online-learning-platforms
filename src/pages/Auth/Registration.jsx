@@ -1,5 +1,5 @@
 import React, { use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import { FaGoogle } from "react-icons/fa6";
 import toast from "react-hot-toast";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 const Register = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = use(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation()
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,7 +22,9 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         updateUserProfile(displayName, photoURL);
+
         toast.success("User created successfully!", { id: "create-user" });
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +38,7 @@ const Register = () => {
       .then((result) => {
         toast.success("User created successfully!", { id: "create-user" });
         console.log(result.user);
-        navigate("/");
+        navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error);

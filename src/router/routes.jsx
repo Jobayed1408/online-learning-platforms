@@ -5,7 +5,13 @@ import Home from "../pages/Home/Home";
 // import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Registration";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+import AddCourse from "../AddCourse/AddCourse";
+import Courses from "../pages/Courses/Courses";
+import CourseDetails from "../pages/Courses/CourseDetails";
+import UpdateCourse from "../pages/Courses/UpdateCourse";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Mycourses from "../MyCourses/Mycourses";
 // import AddModel from "../Pages/AddModel/AddModel";
 // import ModelDetails from "../Pages/ModelDetails/ModelDetails";
 // import UpdateModel from "../Pages/UpdateModel/UpdateModel";
@@ -22,11 +28,15 @@ export const router = createBrowserRouter([
         Component: Home,
         // loader: () => fetch('http://localhost:3000/latest-models')
       },
-    //   {
-    //     path: "/all-models",
-    //     element: <AllModels />,
-    //     loader: () => fetch('http://localhost:3000/models')
-    //   },
+      {
+        path: "/all-courses",
+        element: <Courses />,
+        // loader: () => fetch('http://localhost:3000/models')
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
     //   {
     //     path: "/profile",
     //     element: (
@@ -35,22 +45,30 @@ export const router = createBrowserRouter([
     //       </PrivateRoute>
     //     ),
     //   },
-    //   {
-    //     path: "/add-model",
-    //     element: (
-    //       <PrivateRoute>
-    //         <AddModel />
-    //       </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: "/model-details/:id",
-    //     element: (
-    //       <PrivateRoute>
-    //         <ModelDetails />
-    //       </PrivateRoute>
-    //     ),
-    //   },
+      {
+        path: "/add-course",
+        element: (
+          <PrivateRoute>
+            <AddCourse />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-course",
+        element: (
+          <PrivateRoute>
+            <Mycourses />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/course-details/:id",
+        element: (
+          <PrivateRoute>
+            <CourseDetails />
+          </PrivateRoute>
+        ),
+      },
 
     //    {
     //     path: "/my-models",
@@ -70,15 +88,14 @@ export const router = createBrowserRouter([
     //     ),
     //   },
 
-    //     {
-    //     path: "/update-model/:id",
-    //     element: (
-    //       <PrivateRoute>
-    //         <UpdateModel />
-    //       </PrivateRoute>
-    //     ),
-    //       loader: ({params}) => fetch(`http://localhost:3000/models/${params.id}`)
-    //   },
+        {
+        path: "/update-course/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateCourse />
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/auth/login",
         element: <Login />,
