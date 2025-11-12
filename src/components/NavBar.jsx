@@ -8,6 +8,7 @@ import { AuthContext } from "../context/AuthContext";
 import { MdOutlineDensitySmall } from "react-icons/md";
 import { BookA } from "lucide-react";
 import "./css/themeChange.css"
+import NavItem from "./NavItem";
 
 const NavBar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -50,20 +51,20 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <NavLink to={"/"}>
+              <NavItem to={"/"}>
                 <GoHomeFill />
                 Home
-              </NavLink>
+              </NavItem>
             </li>
             <li>
-              <NavLink to={"/all-courses"}>
+              <NavItem to={"/all-courses"}>
                 <MdOutlineDensitySmall /> Courses
-              </NavLink>
+              </NavItem>
             </li>
             <li>
-              <NavLink to={"/dashboard"}>
+              <NavItem to={"/dashboard"}>
                 <LuLayoutDashboard /> DashBoard
-              </NavLink>
+              </NavItem>
             </li>
             {
               !user && (
@@ -97,20 +98,21 @@ const NavBar = () => {
       <div className="md:navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1 lg:gap-5  text-xl">
           <li>
-            <NavLink to={"/"}>
+              <NavItem to={"/"}>
               <GoHomeFill />
               Home
-            </NavLink>
+              </NavItem>
           </li>
           <li>
-            <NavLink to={"/all-courses"}>
-              <MdOutlineDensitySmall /> Courses
-            </NavLink>
+            <NavItem to={"/all-courses"}>
+            <MdOutlineDensitySmall /> Courses
+              </NavItem>
+              
           </li>
           <li>
-            <NavLink to={"/dashboard"}>
+            <NavItem to={"/dashboard"}>
               <LuLayoutDashboard /> Dashboard
-            </NavLink>
+            </NavItem>
           </li>
           {/* {
               !user && (
@@ -154,15 +156,15 @@ const NavBar = () => {
               </div>
 
               <li>
-                <Link to={"/my-course"}>
+                <NavItem to={"/my-course"}>
                   My Courses
-                </Link>
+                </NavItem>
               </li>
 
               <li >
-                <Link to={"/enroll-course"}>
+                <NavItem to={"/enroll-course"}>
                   My Enrollment
-                </Link>
+                </NavItem>
               </li>
               {/* <div className="theme">
                 <input
