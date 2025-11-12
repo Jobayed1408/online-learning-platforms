@@ -1,7 +1,6 @@
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
-import { FaUser } from "react-icons/fa6";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
@@ -114,20 +113,7 @@ const NavBar = () => {
               <LuLayoutDashboard /> Dashboard
             </NavItem>
           </li>
-          {/* {
-              !user && (
-                <li>
-              <div className="flex  ">
-                <p>  Theme</p>
-                <input
-                  onChange={(e) => handleTheme(e.target.checked)}
-                  type="checkbox"
-                  defaultChecked={localStorage.getItem('theme') === "dark"}
-                  className="toggle" />
-              </div>
-            </li>
-              )
-            } */}
+         
         </ul>
       </div>
       <div className="navbar-end gap-3">
@@ -166,28 +152,6 @@ const NavBar = () => {
                   My Enrollment
                 </NavItem>
               </li>
-              {/* <div className="theme">
-                <input
-                  id="theme-toggle"
-                  className="theme__toggle"
-                  type="checkbox"
-                  onChange={(e) => handleTheme(e.target.checked)}
-                  defaultChecked={localStorage.getItem('theme') === "dark"}
-                />
-                <div className="theme__fill"></div>
-                <div className="theme__icon">
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                  <div className="theme__icon-part"></div>
-                </div>
-              </div> */}
-
 
               <input
                 onChange={(e) => handleTheme(e.target.checked)}

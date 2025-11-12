@@ -18,7 +18,6 @@ const Mycourses = () => {
         axiosInstance
             .get(`/my-courses?email=${user.email}`)
             .then((res) => {
-                console.log(res.data);
                 if (res.data.success) setCourses(res.data.courses);
             })
             .catch((err) => console.error(err))
@@ -29,8 +28,6 @@ const Mycourses = () => {
 
     const handleDelete = (e, id) => {
         e.preventDefault()
-        // console.log(id);
-
 
 
         Swal.fire({

@@ -17,13 +17,11 @@ const Home = () => {
             .get(`/users`)
             .then((res) => {
                 setInstructors(res.data)
-                // console.log(res.data); 
 
             })
             .catch((err) => console.error("Error fetching course:", err))
             .finally(() => setLoading(false));
     }, [instructors])
-    // console.log('users', users); 
 
     if (loading) return <Loader />
 

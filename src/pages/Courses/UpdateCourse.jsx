@@ -8,22 +8,18 @@ import Loader from '../../components/Loader';
 const UpdateCourse = () => {
 
     const { id } = useParams();
-    console.log(id);
 
     const [course, setCourse] = useState(null);
     const [loading, setLoading] = useState(true);
     const [featured, setFeatured] = useState()
     const { user } = use(AuthContext)
     const navigate = useNavigate()
-    console.log(user.email);
-    console.log(course);
 
     useEffect(() => {
         axiosInstance
             .get(`/courses/${id}`)
             .then((res) => {
                 setCourse(res.data.result)
-                // console.log(res.data.result);
 
             })
             .catch((err) => console.error("Error fetching course:", err))
@@ -43,7 +39,7 @@ const UpdateCourse = () => {
             isFeatured: e.target.isFeatured.checked,
             email: user?.email,
         }
-        // console.log(formData);
+
         try {
             const res = await axiosInstance.put(`/update-course/${id}`, formData);
 
@@ -59,19 +55,15 @@ const UpdateCourse = () => {
         }
 
     }
-    // console.log(course);
 
     if (loading) return <Loader/>
-    // if (!course) return <p>Course not found!</p>
-    // console.log(course);
 
     return (
         <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
             <div className="card-body p-6 relative">
                 <h2 className="text-2xl font-bold text-center mb-6">Update Course</h2>
-                {/* <form className="space-y-4"> */}
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    {/* Name Field */}
+
                     <div>
                         <label className="label font-medium">Title</label>
                         <input
@@ -84,7 +76,6 @@ const UpdateCourse = () => {
                         />
                     </div>
 
-                    {/* Category Dropdown */}
                     <div>
                         <label className="label font-medium">Category</label>
                         <select
@@ -105,7 +96,7 @@ const UpdateCourse = () => {
                         </select>
                     </div>
 
-                    {/* Description Textarea */}
+
                     <div>
                         <label className="label font-medium">Description</label>
                         <textarea
@@ -118,7 +109,6 @@ const UpdateCourse = () => {
                         ></textarea>
                     </div>
 
-                    {/* Thumbnail URL */}
                     <div>
                         <label className="label font-medium">Image URL</label>
                         <input
@@ -145,7 +135,6 @@ const UpdateCourse = () => {
 
                     </div>
 
-                    {/* Is featured */}
 
                     <div className="flex items-center gap-2">
                         <label htmlFor="isFeatured" className="text-sm font-medium">
@@ -160,7 +149,6 @@ const UpdateCourse = () => {
                         />
                     </div>
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         className="btn btn-primary w-full text-white mt-6 rounded-full  " 

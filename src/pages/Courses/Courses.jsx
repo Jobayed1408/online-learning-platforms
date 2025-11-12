@@ -8,10 +8,10 @@ const Courses = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selected, setSelected] = useState("All Category");
-  // const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // console.log(courses);
+  
 
+  
   const fetchAllCourses = () => {
     setLoading(true);
     axiosInstance
@@ -61,7 +61,6 @@ const Courses = () => {
 
       return;
     }
-    console.log(selected);
 
     axiosInstance
       .get(`/search-category?category=${category}`)
@@ -71,7 +70,6 @@ const Courses = () => {
       .catch((err) => console.error("Error filtering by category:", err))
       .finally(() => setLoading(false));
   };
-  console.log(courses);
 
 
   if (loading)

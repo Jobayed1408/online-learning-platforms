@@ -33,7 +33,7 @@ const Register = () => {
     createUser(email, password)
       .then(async () => {
         toast.success("User created successfully!", { id: "create-userde" });
-        // console.log(result.user);
+
         const userData = {
           name: displayName,
           email: email,
@@ -48,7 +48,6 @@ const Register = () => {
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.message, { id: "create-user" });
       });
   };
@@ -58,7 +57,6 @@ const Register = () => {
     signInWithGoogle()
       .then(async (result) => {
         toast.success("User created successfully!", { id: "create-user" });
-        // console.log(result.user);
         const user = result.user;
         const userData = {
           name: user.displayName,
@@ -67,11 +65,9 @@ const Register = () => {
           createdAt: new Date(),
         };
         await axiosInstance.post('/users', userData)
-        console.log(userData)
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.message, { id: "create-user" });
       });
   };

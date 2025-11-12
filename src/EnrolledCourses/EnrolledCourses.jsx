@@ -17,8 +17,6 @@ const EnrolledCourses = () => {
     axiosInstance.get(`/enroll-courses?email=${user.email}`)
       .then(res => {
         setCourses(res.data.courses)
-        // console.log(res.data);
-
 
       })
       .catch(err => console.error(err))
@@ -26,8 +24,6 @@ const EnrolledCourses = () => {
   }, [user]);
 
   if (loading) return <Loader />
-  console.log(courses);
-
 
   return (
     <div className=" gap-6 p-6">

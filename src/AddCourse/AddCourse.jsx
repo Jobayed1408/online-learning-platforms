@@ -5,7 +5,6 @@ import axiosInstance from "../components/axiosInstance";
 
 const AddCourse = () => {
     const { user } = use(AuthContext)
-    console.log(user);
     
     const [featured, setFeatured] = useState(false);
 
@@ -23,12 +22,10 @@ const AddCourse = () => {
             downloads: 0,
             created_by: user.email
         }
-        // console.log(formData);
         try {
             const res = await axiosInstance.post("/courses", formData);
             if (res.data.success) {
               toast.success("Course added successfully!");
-            //   e.target.reset();     // reset form fields
               setFeatured(false);   
             }
           } catch (err) {

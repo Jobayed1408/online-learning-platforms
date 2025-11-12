@@ -10,7 +10,6 @@ import { IoConstruct } from "react-icons/io5";
 const CourseDetails = () => {
     const { user } = use(AuthContext)
     
-    console.log(user.email);
     
 
     const { id } = useParams();
@@ -30,7 +29,6 @@ const CourseDetails = () => {
     }, [id]);
 
     const enrollCourse = async(e, userEmail, courseId) => {
-        // console.log('id ',courseId)
         e.preventDefault()
         try {
             const res = await axiosInstance.post("/enroll", { userEmail, courseId });
@@ -49,7 +47,7 @@ const CourseDetails = () => {
 
         toast.error("Update allows only for course owner")
     }
-    // console.log( user);
+
 
     if (loading) return <Loader />
 

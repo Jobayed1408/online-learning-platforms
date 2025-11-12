@@ -1,27 +1,22 @@
-import { use, useContext } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import { FaGoogle } from "react-icons/fa";
 import axiosInstance from "../../components/axiosInstance";
 import toast from "react-hot-toast";
 import { LogInIcon } from "lucide-react";
-import { BsGoogle } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext)
-  // useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
-  // console.log(location);
 
   const handleLogIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(email, password);
     signInUser(email, password)
     .then( async (result) => {
       toast.success("login successfully!");
@@ -33,11 +28,9 @@ const Login = () => {
         createdAt: new Date(),
       };
       await axiosInstance.post('/users', userData)
-      console.log(userData)
       navigate(location.state || "/");
     })
     .catch((error) => {
-      console.log(error);
       toast.error(error.message, { id: "create-user" });
     });
       
@@ -45,12 +38,11 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(location?.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error)
       });
   };
 
