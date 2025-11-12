@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const HeroSection = () => {
     return (
-        <section className="from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 py-16 px-6">
+        <section className="from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 py-5 md:py-16 px-6">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
                 <motion.div
@@ -14,9 +14,9 @@ const HeroSection = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center md:text-left space-y-6"
                 >
-                    <h1 className="text-4xl md:text-5xl font-extrabold  leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
                         Unlock Your Potential with{" "} <br />
-                        <span className="text-blue-600">E-Learning</span>
+                        <span className="text-blue-600">E-Learning</span> 
                     </h1>
                     <p className=" text-lg max-w-lg">
                         Learn, teach, and grow by exchanging skills with people in your

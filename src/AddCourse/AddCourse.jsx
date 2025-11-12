@@ -2,11 +2,13 @@ import { use, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
 import axiosInstance from "../components/axiosInstance";
+import { useNavigate } from "react-router";
 
 const AddCourse = () => {
     const { user } = use(AuthContext)
     
     const [featured, setFeatured] = useState(false);
+    const navigate = useNavigate()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -25,6 +27,7 @@ const AddCourse = () => {
         try {
             const res = await axiosInstance.post("/courses", formData);
             if (res.data.success) {
+                navigate('/all-courses')
               toast.success("Course added successfully!");
               setFeatured(false);   
             }

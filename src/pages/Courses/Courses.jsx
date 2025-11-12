@@ -80,7 +80,7 @@ const Courses = () => {
     );
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-1 md:px-4 py-10">
       <form onSubmit={handleSearch} className="flex mb-8 gap-3 justify-center">
         <input
           type="text"
@@ -119,7 +119,7 @@ const Courses = () => {
               <li key={category}>
                 <button
                   onClick={() => handleSelect(category)}
-                  className="hover:bg-primary hover:text-white rounded-lg"
+                  // className="hover:bg-primary hover:text-white rounded-lg"
                 >
                   {category}
                 </button>
@@ -129,12 +129,12 @@ const Courses = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.length > 0 ? (
           courses.map((course) => (
             <div
               key={course._id}
-              className="border rounded-lg p-4 shadow hover:shadow-lg transition"
+              className="border rounded-lg p-2 md:p-4 shadow hover:shadow-lg transition"
             >
               <img
                 src={course.image}
