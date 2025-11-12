@@ -21,7 +21,6 @@ const PopularCourses = () => {
 
   if (loading) return <Loader />;
 
-  // ✨ Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,14 +45,14 @@ const PopularCourses = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 md:grid-cols-3 gap-6 md:p-6"
+      className="grid grid-cols-1 md:grid-cols-3 gap-6 md:p-4"
     >
       {courses.slice(0, 6).map((course) => (
         <motion.div
           key={course._id}
           variants={cardVariants}
           whileHover={{ scale: 1.03, y: -5 }}
-          className=" border border-blue-600 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col items-center"
+          className=" border border-blue-600 rounded-xl p-2 md:p-3 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col items-center"
         >
           <motion.img
             src={course.image}

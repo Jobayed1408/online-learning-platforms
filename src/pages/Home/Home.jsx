@@ -30,7 +30,7 @@ const Home = () => {
 
             <HeroSection></HeroSection>
             <section className="py-12 ">
-                <div className="container mx-auto px-4 text-center">
+                <div className="container mx-auto px-2 md:px-4 text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -56,12 +56,12 @@ const Home = () => {
                     >
                         Top Instructors
                     </motion.h2>
-                    <p className="mt-2">
+                    <p className="mt-2 px-4">
                         Learn from the industry's best mentors with years of experience.
                     </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8  mx-auto">
                     {instructors.slice(0, 4).map((ins, i) => (
                         <motion.div
                             key={i}

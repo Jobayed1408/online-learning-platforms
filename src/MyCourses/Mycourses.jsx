@@ -60,14 +60,14 @@ const Mycourses = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 p-2 items-center md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 p-1 md:p-2 items-center  md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.length === 0 ? (
                 <p>No courses found</p>
             ) : (
                 courses.map((course) => (
                     <div
                         key={course._id}
-                        className="border rounded-lg p-4 shadow hover:shadow-lg transition"
+                        className="border rounded-lg p-2 md:p-4 shadow hover:shadow-lg transition"
                     >
 
                         <img
