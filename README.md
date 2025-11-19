@@ -38,6 +38,73 @@ SkillHub is a full-stack online learning platform where users can explore, enrol
 
 ---
 
+## 📦 Dependencies
+
+Below are the main dependencies used in the **SkillHub** Online Learning Platform.
+
+---
+
+### 🚀 Client-Side (React)
+
+| Package | Purpose |
+|--------|---------|
+| **react** | Core UI library |
+| **react-dom** | DOM renderer for React |
+| **react-router-dom** | Routing & navigation |
+| **vite** | Frontend build tool |
+| **tailwindcss** | Styling framework |
+| **daisyui** | Prebuilt UI components |
+| **framer-motion** | Animations |
+| **aos** | Scroll animations |
+| **axios** | API requests |
+| **@tanstack/react-query** | Data fetching & caching |
+| **firebase** | Authentication (Email/Password, Google) |
+| **react-hot-toast** | Toast notifications |
+| **react-icons** | Icon library |
+| **classnames** | Conditional class handling (optional) |
+
+---
+
+### 🛠️ Server-Side (Node + Express)
+
+| Package | Purpose |
+|--------|---------|
+| **express** | Web server framework |
+| **cors** | Handle cross-origin requests |
+| **dotenv** | Environment variables |
+| **mongodb** | Database driver |
+| **mongoose** | MongoDB modeling & schema |
+| **firebase-admin** | Token verification for Firebase Auth |
+| **jsonwebtoken** | JWT handling (optional) |
+| **axios** | Used for imgbb image upload |
+| **nodemon** | Auto server restart (development) |
+
+---
+
+### 🧰 Dev Tools
+
+| Package | Purpose |
+|--------|---------|
+| **postcss** | CSS processing |
+| **autoprefixer** | CSS prefixing |
+| **morgan** | Request logging (optional) |
+
+---
+
+### 📌 Note
+These dependencies may grow as the project evolves, but they include everything required for:
+- Authentication  
+- CRUD operations  
+- UI components  
+- Animations  
+- Filtering  
+- API communication  
+- Database interaction  
+
+---
+
+
+
 <!-- ## Installation
 
 1. Clone the repositories:  
