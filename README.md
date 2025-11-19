@@ -1,6 +1,6 @@
 # SkillHub - Learn Smarter, Grow Faster
 
-**Live Site:** [(https://skill-hub-clients-0.netlify.app/)]  
+**SHow Site:** [(https://skill-hub-clients-0.netlify.app/)]  
 
 SkillHub is a full-stack online learning platform where users can explore, enroll in, and manage courses while instructors can create and manage their own courses. The platform focuses on smooth interaction, intuitive UI, and efficient data management.
 
@@ -105,9 +105,67 @@ These dependencies may grow as the project evolves, but they include everything 
 
 
 
-<!-- ## Installation
+---
 
-1. Clone the repositories:  
-   ```bash
-   git clone [client-repo-url]
-   git clone [server-repo-url] -->
+## ⚙️ Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+* Node.js (v16+ recommended)
+* npm or yarn
+
+---
+
+## 🚀 Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Jobayed1408/online-learning-platforms.git
+cd online-learning-platforms
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+# or
+yarn start
+```
+
+4. Open in your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📦 Deployment
+
+You can deploy this project easily using **Vercel** or **Netlify**:
+
+### Deploy to Vercel
+
+```bash
+npm run build
+vercel deploy
+```
+
+### Deploy to Netlify
+
+```bash
+npm run build
+netlify deploy
+```
+
+---
+
