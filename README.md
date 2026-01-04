@@ -1,6 +1,6 @@
 # SkillHub - Learn Smarter, Grow Faster
 
-**Live Site:** [(https://skill-hub-clients-0.netlify.app/)]  
+**SHow Site:** [(https://skill-hub-clients-0.netlify.app/)]  
 
 SkillHub is a full-stack online learning platform where users can explore, enroll in, and manage courses while instructors can create and manage their own courses. The platform focuses on smooth interaction, intuitive UI, and efficient data management.
 
@@ -38,9 +38,134 @@ SkillHub is a full-stack online learning platform where users can explore, enrol
 
 ---
 
-<!-- ## Installation
+## 📦 Dependencies
 
-1. Clone the repositories:  
-   ```bash
-   git clone [client-repo-url]
-   git clone [server-repo-url] -->
+Below are the main dependencies used in the **SkillHub** Online Learning Platform.
+
+---
+
+### 🚀 Client-Side (React)
+
+| Package | Purpose |
+|--------|---------|
+| **react** | Core UI library |
+| **react-dom** | DOM renderer for React |
+| **react-router-dom** | Routing & navigation |
+| **vite** | Frontend build tool |
+| **tailwindcss** | Styling framework |
+| **daisyui** | Prebuilt UI components |
+| **framer-motion** | Animations |
+| **aos** | Scroll animations |
+| **axios** | API requests |
+| **@tanstack/react-query** | Data fetching & caching |
+| **firebase** | Authentication (Email/Password, Google) |
+| **react-hot-toast** | Toast notifications |
+| **react-icons** | Icon library |
+| **classnames** | Conditional class handling (optional) |
+
+---
+
+### 🛠️ Server-Side (Node + Express)
+
+| Package | Purpose |
+|--------|---------|
+| **express** | Web server framework |
+| **cors** | Handle cross-origin requests |
+| **dotenv** | Environment variables |
+| **mongodb** | Database driver |
+| **mongoose** | MongoDB modeling & schema |
+| **firebase-admin** | Token verification for Firebase Auth |
+| **jsonwebtoken** | JWT handling (optional) |
+| **axios** | Used for imgbb image upload |
+| **nodemon** | Auto server restart (development) |
+
+---
+
+### 🧰 Dev Tools
+
+| Package | Purpose |
+|--------|---------|
+| **postcss** | CSS processing |
+| **autoprefixer** | CSS prefixing |
+| **morgan** | Request logging (optional) |
+
+---
+
+### 📌 Note
+These dependencies may grow as the project evolves, but they include everything required for:
+- Authentication  
+- CRUD operations  
+- UI components  
+- Animations  
+- Filtering  
+- API communication  
+- Database interaction  
+
+---
+
+
+
+---
+
+## ⚙️ Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+* Node.js (v16+ recommended)
+* npm or yarn
+
+---
+
+## 🚀 Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Jobayed1408/online-learning-platforms.git
+cd online-learning-platforms
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+# or
+yarn start
+```
+
+4. Open in your browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 📦 Deployment
+
+You can deploy this project easily using **Vercel** or **Netlify**:
+
+### Deploy to Vercel
+
+```bash
+npm run build
+vercel deploy
+```
+
+### Deploy to Netlify
+
+```bash
+npm run build
+netlify deploy
+```
+
+---
+
