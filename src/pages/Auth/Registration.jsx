@@ -1,11 +1,10 @@
 import React, { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import { FaGoogle, FaRegistered } from "react-icons/fa6";
+import { FaRegistered } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import axiosInstance from "../../components/axiosInstance";
 import { FcGoogle } from "react-icons/fc";
-import { BiRegistered } from "react-icons/bi";
 
 const Register = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = use(AuthContext);
@@ -53,7 +52,7 @@ const Register = () => {
   };
 
   const handleGoogleSignIn = () => {
-    toast.loading("Creating user...", { id: "create-user" });
+    // toast.loading("Creating user...", { id: "create-user" });
     signInWithGoogle()
       .then(async (result) => {
         toast.success("User created successfully!", { id: "create-user" });

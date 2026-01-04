@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import axiosInstance from '../../components/axiosInstance';
 import Loader from '../../components/Loader';
 import WhyChooseUs from './WhyChooseUs';
+import HeroSlider from '../../components/HeroSlider';
+import Testimonials from '../../components/Testimonials';
+import Statistics from '../../components/Statistics';
+import Services from '../../components/Services';
+import Features from '../../components/Features';
 
 
 const Home = () => {
@@ -27,7 +32,7 @@ const Home = () => {
 
     return (
         <div>
-
+            <HeroSlider></HeroSlider>
             <HeroSection></HeroSection>
             <section className="py-12 ">
                 <div className="container mx-auto px-2 md:px-4 text-center">
@@ -61,14 +66,14 @@ const Home = () => {
                     </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8  mx-auto">
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-1  mx-auto">
                     {instructors.slice(0, 4).map((ins, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className=" p-6 rounded-xl border border-blue-600 mx-5 shadow hover:shadow-lg transition flex flex-col items-center"
+                            className=" p-5 rounded-sm hover:border border-blue-300 shadow hover:shadow-lg transition flex flex-col items-center"
                         >
                             <motion.img
                                         src={ins.photo}
@@ -93,6 +98,21 @@ const Home = () => {
                 <WhyChooseUs />
             </section>
 
+            <section>
+                <Features />
+            </section>
+
+            <section>
+                <Services />
+            </section>
+
+            <section>
+                <Statistics></Statistics>
+            </section>
+            
+            <section>
+                <Testimonials/>
+            </section>
 
 
 

@@ -8,6 +8,7 @@ import { MdOutlineDensitySmall } from "react-icons/md";
 import { BookA } from "lucide-react";
 import "./css/themeChange.css"
 import NavItem from "./NavItem";
+import { CgProfile } from "react-icons/cg";
 
 const NavBar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -25,7 +26,7 @@ const NavBar = () => {
     setTheme(checked ? "dark" : "light")
   }
   return (
-    <div className="navbar min-h-0 z-1 pb-10 pt-5 glass-card max-w-7xl mx-auto">
+    <div className="navbar sticky top-0 z-50 backdrop-blur bg-base-100/80 border-b border-base-300 min-h-0 py-2 glass-card max-w-7xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -65,6 +66,11 @@ const NavBar = () => {
                 <LuLayoutDashboard /> DashBoard
               </NavItem>
             </li>
+            <li>
+              <NavItem to={"/"}>
+              <CgProfile /> Profile
+              </NavItem>
+            </li>
             {
               !user && (
                 <li>
@@ -92,7 +98,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-center md:hidden items-center flex font-bold text-primary text-2xl">
         <BookA className="" />
-        <h1>Skill-HUB</h1>
+        <a href="/">Skill-HUB</a>
       </div>
       <div className="md:navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1 lg:gap-5  text-xl">
@@ -113,6 +119,15 @@ const NavBar = () => {
               <LuLayoutDashboard /> Dashboard
             </NavItem>
           </li>
+          {
+            user? (
+              <li>
+              <NavItem to={"/profile"}>
+              <CgProfile /> Profile
+              </NavItem>
+            </li>
+            ): ''
+          }
          
         </ul>
       </div>
@@ -142,13 +157,13 @@ const NavBar = () => {
               </div>
 
               <li>
-                <NavItem to={"/my-course"}>
+                <NavItem to={"/dashboard/my-course"}>
                   My Courses
                 </NavItem>
               </li>
 
               <li >
-                <NavItem to={"/enroll-course"}>
+                <NavItem to={"/dashboard/enroll-course"}>
                   My Enrollment
                 </NavItem>
               </li>

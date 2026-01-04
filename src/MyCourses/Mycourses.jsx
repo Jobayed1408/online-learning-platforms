@@ -4,7 +4,6 @@ import axiosInstance from "../components/axiosInstance";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 import Loader from "../components/Loader";
-// import toast from "react-hot-toast";
 
 const Mycourses = () => {
 
@@ -24,11 +23,10 @@ const Mycourses = () => {
             .finally(() => setLoading(false));
     }, [user]);
 
-    if (loading) return <Loader />
+    if (loading) return <Loader /> 
 
     const handleDelete = (e, id) => {
         e.preventDefault()
-
 
         Swal.fire({
             title: "Are you sure?",

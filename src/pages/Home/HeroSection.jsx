@@ -27,7 +27,7 @@ const HeroSection = () => {
                         <Link to={'/all-courses'} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md">
                             Get Started
                         </Link>
-                        <Link to={'/all-courses'} className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-lg shadow-md">
+                        <Link to={'/all-courses'} className="border border-blue-600 text-blue-600 hover:bg-blue-600 font-bold hover:text-white px-6 py-3 rounded-lg shadow-md">
                             Browse Courses
                         </Link>
                     </div>

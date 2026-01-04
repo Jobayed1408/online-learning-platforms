@@ -27,6 +27,7 @@ const CourseDetails = () => {
             .catch((err) => toast.error("Error fetching course:", err))
             .finally(() => setLoading(false));
     }, [id]);
+    
 
     const enrollCourse = async(e, userEmail, courseId) => {
         e.preventDefault()
@@ -47,7 +48,6 @@ const CourseDetails = () => {
 
         toast.error("Update allows only for course owner")
     }
-
 
     if (loading) return <Loader />
 
@@ -110,10 +110,10 @@ const CourseDetails = () => {
                             className="w-25 h-25 border border-primary rounded-full object-cover transition duration-300 hover:scale-105"
                         />
                         <div className="flex flex-col items-center">
-                            <p className="font-semibold text-xl">{user.displayName}</p>
+                            <p className="font-semibold text-xl">{course.created_by}</p>
                             <div className="flex gap-3 text-sm bg-blue-500 px-3 py-1 rounded-2xl justify-center items-center">
                             <span><IoConstruct /></span>
-                            <p className=" text-black"> Instructor</p>
+                            <p className=" text-black"> Instructor email</p>
                             </div>
                         </div>
                     </div>

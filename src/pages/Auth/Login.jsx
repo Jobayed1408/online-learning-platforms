@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import axiosInstance from "../../components/axiosInstance";
@@ -11,6 +11,9 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -18,22 +21,22 @@ const Login = () => {
     const password = event.target.password.value;
 
     signInUser(email, password)
-    .then( async (result) => {
-      toast.success("login successfully!");
-      const user = result.user;
-      const userData = {
-        name: user.displayName,
-        email: user.email,
-        photo: user.photoURL,
-        createdAt: new Date(),
-      };
-      await axiosInstance.post('/users', userData)
-      navigate(location.state || "/");
-    })
-    .catch((error) => {
-      toast.error(error.message, { id: "create-user" });
-    });
-      
+      .then(async (result) => {
+        toast.success("login successfully!");
+        const user = result.user;
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          photo: user.photoURL,
+          createdAt: new Date(),
+        };
+        await axiosInstance.post('/users', userData)
+        navigate(location.state || "/");
+      })
+      .catch((error) => {
+        toast.error(error.message, { id: "create-user" });
+      });
+
   };
 
   const handleGoogleSignIn = () => {
@@ -52,11 +55,13 @@ const Login = () => {
         <h1 className="text-3xl font-bold text-center">Login</h1>
         <form onSubmit={handleLogIn}>
           <fieldset className="fieldset">
-   
+
             <label className="label">Email</label>
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="input rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Email"
             />
@@ -65,17 +70,33 @@ const Login = () => {
             <input
               type="password"
               name="password"
-               className="input rounded-full focus:border-0 focus:outline-gray-200"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Password"
             />
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
             <button className="btn text-white mt-4 rounded-full btn-primary">
-            <LogInIcon size={20} /> Login
+              <LogInIcon size={20} /> Login
             </button>
           </fieldset>
         </form>
+
+        <button
+          className="btn text-white mt-2 rounded-full btn-primary"
+          type="button"
+          onClick={async () => {
+            setEmail("demo@gmail.com");
+            setPassword("Demo@gmail.com");
+            await signInUser("demo@gmail.com", "Demo@gmail.com");
+            navigate("/");
+
+          }}
+        >
+          Demo User
+        </button>
 
         <button
           onClick={handleGoogleSignIn}
@@ -89,7 +110,7 @@ const Login = () => {
             className="text-blue-500 hover:text-blue-800"
             to="/auth/register"
           >
-             Register
+            Register
           </Link>
         </p>
       </div>

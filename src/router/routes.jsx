@@ -8,10 +8,13 @@ import AddCourse from "../AddCourse/AddCourse";
 import Courses from "../pages/Courses/Courses";
 import CourseDetails from "../pages/Courses/CourseDetails";
 import UpdateCourse from "../pages/Courses/UpdateCourse";
-import Dashboard from "../pages/Dashboard/Dashboard";
+// import Dashboard from "../pages/Dashboard/Dashboard";
 import Mycourses from "../MyCourses/Mycourses";
 import EnrolledCourses from "../EnrolledCourses/EnrolledCourses";
 import ErrorPage from "../components/ErrorPage";
+import DashboardHome from "../pages/Dashboard/DashboardHome";
+import DashboardLayout from "../layout/DashboardLayout";
+import Profile from "../components/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -28,39 +31,16 @@ export const router = createBrowserRouter([
         element: <Courses />,
       },
       {
-        path: "/dashboard",
-        element: <Dashboard />,
+        path: "/profile",
+        element: <Profile />,
       },
-      {
-        path: "/add-course",
-        element: (
-          <PrivateRoute>
-            <AddCourse />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/my-course",
-        element: (
-          <PrivateRoute>
-            <Mycourses />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/enroll-course",
-        element: (
-          <PrivateRoute>
-            <EnrolledCourses />
-          </PrivateRoute>
-        ),
-      },
+      
+      
       {
         path: "/course-details/:id",
         element: (
-          <PrivateRoute>
+          
             <CourseDetails />
-          </PrivateRoute>
         ),
       },
 
@@ -82,4 +62,37 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true, // /dashboard
+        element: <DashboardHome />,
+      },
+      {
+        path: "dash-home", // /dashboard home
+        element: <DashboardHome />,
+      },
+      {
+        path: "add-course", // /dashboard/add-course
+        element: <AddCourse />,
+      },
+      {
+        path: "my-course", // /dashboard/my-course
+        element: <Mycourses />,
+      },
+      {
+        path: "enroll-course", // /dashboard/enroll-course
+        element: <EnrolledCourses />,
+      },
+      
+      
+    ],
+  }
+  
 ]);
